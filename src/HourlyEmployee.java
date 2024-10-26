@@ -3,13 +3,18 @@ public class HourlyEmployee extends Employee {
 
 
     public HourlyEmployee(String name, String birthDate, String hireDate, double hourlyPayRate) {
-        super(name,birthDate,hireDate);
+        super(name, birthDate, hireDate);
         this.hourlyPayRate = hourlyPayRate;
     }
 
 
+    @Override
+    public double collectPay() {
+        return hourlyPayRate * 40;
+    }
+
     public double getDoublePay(){
-        return hourlyPayRate * 2;
+        return 2 * collectPay();
     }
 
     @Override

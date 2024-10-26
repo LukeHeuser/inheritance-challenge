@@ -4,24 +4,24 @@ public class SalariedEmployee extends Employee{
 
 
 
-    public SalariedEmployee(String name, String birthDate, String hireDate, Double annualSalary, boolean isRetired) {
+    public SalariedEmployee(String name, String birthDate, String hireDate, Double annualSalary) {
         super(name, birthDate, hireDate);
         this.annualSalary = annualSalary;
-        this.isRetired = isRetired;
 
     }
 
     public double collectPay(){
-        return annualSalary/ 26;
+
+        double paycheck = annualSalary/ 26;
+        double adjustedPay = (isRetired) ? (paycheck * 0.9) : paycheck;
+
+        return adjustedPay;
+
     }
 
-    public String isRetired() {
-        if (isRetired){
-            return "retired";
-        } else {
-            return "not retired";
-        }
-
+    public void isRetired() {
+        terminate("10/25/24");
+        isRetired = true;
     }
 
     @Override
