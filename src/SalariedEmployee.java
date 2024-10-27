@@ -7,7 +7,6 @@ public class SalariedEmployee extends Employee{
     public SalariedEmployee(String name, String birthDate, String hireDate, Double annualSalary) {
         super(name, birthDate, hireDate);
         this.annualSalary = annualSalary;
-
     }
 
     public double collectPay(){
